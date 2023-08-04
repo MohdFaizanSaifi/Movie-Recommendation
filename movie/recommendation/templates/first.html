@@ -11,7 +11,7 @@
   
   <div class="heading"> <h1> Movie Recommendation System </h1> </div>
   <div class="form">
-    <form id="recommendation-form" method = "post">
+    <form name= "myForm" id="recommendation-form" method = "post" onsubmit="return validation()" >
       <label><center>  Get personalized movie recommendations. <br> Tell us your favorite movie. </center></label>
       <br>
       <input type="text" name="movie_name" placeholder="Enter a movie name">
@@ -33,5 +33,17 @@
   </div>
   
 </body>
+<script>
+  function validation() {
+   
+  let x = document.forms["myForm"]["movie_name"].value;
+  if (x == "") {
+    alert("Please enter movie name!");
+    return false;
+  
+  }
+}
+  
+</script>
 <script src="{% static 'script.js' %}"></script>
 </html>

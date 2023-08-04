@@ -3,6 +3,7 @@ const list = document.querySelector('#recommendation-list');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  console.log(e,"HI");
   const movieName = e.target.elements.movie_name.value;
   fetch(`/recommend/?movie_name=${movieName}`)
     .then(response => response.json())
